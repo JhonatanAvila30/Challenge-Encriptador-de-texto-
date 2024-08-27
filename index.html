@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encrypt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <main class="main">
+        <header class="main__header">
+            <img class="main__logo" src="./assets/logo.png" alt="Company Logo" />
+        </header>
+
+        <section class="main__content">
+            <div class="content__input-container">
+                <textarea class="content__textarea" name="inputValue" id="inputValue"
+                    placeholder="Ingrese el texto aquí"></textarea>
+
+                <div class="content__disclaimer">
+                    <span class="disclaimer">
+                        <img src="./assets/exclamation.png" alt="exclamation mark" />
+                        Solo letras minúsculas y sin acentos
+                    </span>
+                </div>
+
+                <div class="content__buttons">
+                    <button class="button button--encrypt" id="encrypt" onclick="encryptMessage()">
+                        Encriptar
+                    </button>
+                    <button class="button button--decrypt" id="decrypt" onclick="decryptMessage()" disabled>
+                        Desencriptar
+                    </button>
+                </div>
+            </div>
+
+            <div class="content__output-container">
+                <div id="outputContainerNotFound" class="output__container visible">
+                    <div class="output__image-container">
+                        <img class="output__image" src="./assets/not-found.png" alt="Not found" />
+                    </div>
+                    <div class="output__message-container">
+                        <h3 class="output__message-title">
+                            Ningún mensaje fue encontrado
+                        </h3>
+                        <p class="output__message-description">
+                            Ingresa el texto que desees encriptar o desencriptar.
+                        </p>
+                    </div>
+                </div>
+                <div id="outputContainer" class="output__container hidden">
+                    <div class="output__message-container">
+                        <p class="output__message-description" id="encryptedMessage"></p>
+
+                        <button class="button button--copy" id="copyButton" onclick="copyToClipboard()">Copiar</button>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Desarrollado por Jhonatan Avila</p>
+    </footer>
+</body>
+
+</html>
